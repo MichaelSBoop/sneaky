@@ -10,7 +10,7 @@
       `https://v6.exchangerate-api.com/v6/${APIKey}/pair/${curr1}/${curr2}`
     )
       .then((data) => data.json())
-      .catch((err) => "Error: " + err);
+      .catch((err) => console.log(err));
     return res;
   };
   let topVal: number;

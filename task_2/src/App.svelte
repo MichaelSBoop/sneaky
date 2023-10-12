@@ -40,7 +40,7 @@
   <header>Convert currency</header>
   <div class="currency left">
     <select class="size" bind:value={selected1}>
-      <!-- Change event can be added upon selecting currency, but leads to unintuitive and unpredictible user expirience -->
+      <!-- Change event can be added upon selecting currency, but leads to unintuitive and unpredictable user expirience -->
       <!-- on:change={handleLeft} -->
       <option value="USD">USD</option>
       <option value="RUB">RUB</option>
@@ -64,7 +64,7 @@
   />
   <div class="currency right">
     <select class="size" bind:value={selected2}>
-      <!-- Change event can be added upon selecting currency, but leads to unintuitive and unpredictible user expirience -->
+      <!-- Change event can be added upon selecting currency, but leads to unintuitive and unpredictable user expirience -->
       <!-- on:change={handleRight} -->
       <option value="USD">USD</option>
       <option value="RUB">RUB</option>

@@ -18,18 +18,18 @@
   let selected1: HTMLOptionElement;
   let selected2: HTMLOptionElement;
 
-  const handleLeft = async () => {
+  const handleTop = async () => {
     const rate = await getData(selected1, selected2);
     botVal = topVal * rate.conversion_rate;
   };
 
-  const handleRight = async () => {
+  const handleBot = async () => {
     const rate = await getData(selected2, selected1);
     topVal = botVal * rate.conversion_rate;
   };
 
-  $: handleLeft;
-  $: handleRight;
+  $: handleTop;
+  $: handleBot;
   $: selected1;
   $: selected2;
   $: topVal;
@@ -38,7 +38,7 @@
 
 <main class="wrapper">
   <header>Convert currency</header>
-  <div class="currency left">
+  <div class="currency">
     <select class="size" bind:value={selected1}>
       <!-- Change event can be added upon selecting currency, but leads to unintuitive and unpredictable user expirience -->
       <!-- on:change={handleLeft} -->
@@ -49,23 +49,13 @@
       <option value="JPY">JPY</option>
     </select>
   </div>
-  <input
-    class="size"
-    type="number"
-    bind:value={topVal}
-    on:change={handleLeft}
-  />
+  <input class="size" type="number" bind:value={topVal} on:change={handleTop} />
   <div />
-  <input
-    class="size"
-    type="number"
-    bind:value={botVal}
-    on:change={handleRight}
-  />
-  <div class="currency right">
+  <input class="size" type="number" bind:value={botVal} on:change={handleBot} />
+  <div class="currency">
     <select class="size" bind:value={selected2}>
       <!-- Change event can be added upon selecting currency, but leads to unintuitive and unpredictable user expirience -->
-      <!-- on:change={handleRight} -->
+      <!-- on:change={handleBot} -->
       <option value="USD">USD</option>
       <option value="RUB">RUB</option>
       <option value="EUR">EUR</option>
